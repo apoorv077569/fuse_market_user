@@ -3,7 +3,7 @@ import Question from "../models/question.model.js";
 
 export const getSection = async(req,res) =>{
     try{
-        const section = await Section.find({isAcgtive:true}).select("name description");
+        const section = await Section.find({isActive:true}).select("name description");
         return res.status(200).json({
             success:true,
             count:section.length,

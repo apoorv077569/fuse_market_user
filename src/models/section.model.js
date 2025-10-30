@@ -10,7 +10,7 @@ const sectionSchema = new mongoose.Schema(
         description:{
             type:String
         },
-        isAcgtive:
+        isActive:
         {
         type:Boolean,
         default:true
