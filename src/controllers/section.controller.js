@@ -19,14 +19,14 @@ export const getSection = async(req,res) =>{
 
 export const questionBySection = async(req,res) =>{
     try{
-        const {id} = req.params;
-        const section = await Section.findById({id});
+        const {sectionId} = req.params;
+        const section = await Section.findById({sectionId});
         if(!section) return res.status(404).json({
             success:false,
             message:"Section not found",
         });
 
-        const questions = await Question.find({sectionId:id}).select("question options correctAnswer");
+        const questions = await Question.find({sectionId:sectionId}).select("question options correctAnswer");
         return res.status(200).json({
             success:true,
             message:"Question fetched",
