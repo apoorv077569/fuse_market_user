@@ -5,6 +5,7 @@ import qrRoute from "./routes/qr.routes.js";
 import sectionRouter from "./routes/section.routes.js";
 import authRoute from "./routes/auth.routes.js";
 import passwordRoute from "./routes/password.routes.js";
+import answerRouter from "./routes/answer.routes.js";
 const app = express();
 app.use(cors({
     origin:process.env.CORS_ORIGIN,
@@ -19,5 +20,6 @@ app.use("/api/user",userRouter);
 app.use("/api",qrRoute);
 app.use("/api",sectionRouter);
 app.use("/api/password",passwordRoute)
+app.use("/api",answerRouter);
 
 export default app;
